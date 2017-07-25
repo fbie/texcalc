@@ -2,45 +2,48 @@
 
 \usepackage{amsfonts}
 \usepackage{amsmath}
-
 \usepackage{semantic}
 
-% General semantics
+
+%%% General spreadsheets
+\newcommand{\Arr}[2]{#1\!:\!#2}
+
+\newcommand{\RC}[2]{\mathtt{R}#1\mathtt{C}#2}
+\newcommand{\RCtt}[2]{\mathtt{R#1C#2}}
+
+
+%%% General semantics
 \newcommand{\sOr}{~~|~~}
 \newcommand{\sAssn}{~:=~}
 
 
-% Semantics forms
+%%% Semantics forms
 \newcommand{\sIF}[3]{\mathtt{IF}(#1,\ #2,\ #3)}
-\newcommand{\sRCaa}[2]{\mathtt{R}\hphantom{[}#1\hphantom{]}\mathtt{C}\hphantom{[}#2\hphantom{]}}
-\newcommand{\sRCtt}[2]{\mathtt{R}#1\mathtt{C}#2} % "t" means "tight"
-\newcommand{\sRCar}[2]{\mathtt{R}\hphantom{[}#1\hphantom{]}\mathtt{C}[#2]}
-\newcommand{\sRCra}[2]{\mathtt{R}[#1]\mathtt{C}\hphantom{[}#2\hphantom{]}}
-\newcommand{\sRCrr}[2]{\mathtt{R}[#1]\mathtt{C}[#2]}
-
-% General spreadsheets
-\newcommand{\Arr}[2]{#1\!:\!#2}
+\newcommand{\sRCaa}[2]{\RC{\hphantom{[}#1\hphantom{]}}{\hphantom{[}#2\hphantom{]}}}
+\newcommand{\sRCar}[2]{\RC{\hphantom{[}#1\hphantom{]}}{[#2]}}
+\newcommand{\sRCra}[2]{\RC{[#1]}{\hphantom{[}#2\hphantom{]}}}
+\newcommand{\sRCrr}[2]{\RC{[#1]}{[#2]}}
 
 
-% Concrete forms
+%%% Concrete forms
 \newcommand{\cIF}[3]{\mathtt{IF(#1,\ #2,\ #3)}}
-\newcommand{\cRCaa}[2]{\mathtt{R#1C#1}}
-\newcommand{\cRCar}[2]{\mathtt{R#1C[#2]}}
-\newcommand{\cRCra}[2]{\mathtt{R[#1]C#2}}
-\newcommand{\cRCrr}[2]{\mathtt{R[#1]C[#2]}}
+\newcommand{\cRCaa}[2]{\RCtt{#1}{#1}}
+\newcommand{\cRCar}[2]{\RCtt{#1}{[#2]}}
+\newcommand{\cRCra}[2]{\RCtt{[#1]}{#2}}
+\newcommand{\cRCrr}[2]{\RCtt{[#1]}{[#2]}}
 
 
-% Context, reduction relation, side-conditions
+%%% Context, reduction relation, side-conditions
 \newcommand{\ctx}{\mathcal{E}}
 
-\newcommand{\srulename}[1]{\text{\textsc{[#1]}}}
-\newcommand{\srule}[4]{#2 #3 & \srulename{#1}\\#4\\}
+\newcommand{\sRulename}[1]{\text{\textsc{[#1]}}}
+\newcommand{\sRule}[4]{#2 #3 & \sRulename{#1}\\#4\\}
 
-\newcommand{\where}[1]{\qquad\text{\textbf{where} } #1\\}
-\newcommand{\wand}[1]{\qquad\hphantom{\text{\textbf{where} }} #1\\}
+\newcommand{\sWhere}[1]{\qquad\text{\textbf{where} } #1\\}
+\newcommand{\sAnd}[1]{\qquad\hphantom{\text{\textbf{where} }} #1\\}
 
-% Lifting
+%%% Lifting
 \newcommand{\lctx}{\mathcal{L}}
-\newcommand{\lftmore}{\mathtt{more}}
-\newcommand{\lftdone}{\mathtt{done}}
-\newcommand{\lftrule}[3]{\srule{#1}{#2}{\rightsquigarrow}{#3}}
+\newcommand{\lftMore}{\mathtt{more}}
+\newcommand{\lftDone}{\mathtt{done}}
+\newcommand{\lftRule}[3]{\sRule{#1}{#2}{\rightsquigarrow}{#3}}
