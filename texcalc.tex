@@ -6,19 +6,19 @@
 
 
 %%% General spreadsheets
-\newcommand{\Arr}[2]{#1\!:\!#2}
+\newcommand{\Arr}[2]{\ensuremath{#1\!:\!#2}}
 
-\newcommand{\RC}[2]{\mathtt{R}#1\mathtt{C}#2}
-\newcommand{\RCtt}[2]{\mathtt{R#1C#2}}
+\newcommand{\RC}[2]{\ensuremath{\mathtt{R}#1\mathtt{C}#2}}
+\newcommand{\RCtt}[2]{\ensuremath{\mathtt{R#1C#2}}}
 
 
 %%% General semantics
-\newcommand{\sOr}{~~|~~}
-\newcommand{\sAssn}{~:=~}
+\newcommand{\sOr}{\ensuremath{~~|~~}}
+\newcommand{\sAssn}{\ensuremath{~:=~}}
 
 
 %%% Semantics forms
-\newcommand{\sIF}[3]{\mathtt{IF}(#1,\ #2,\ #3)}
+\newcommand{\sIF}[3]{\ensuremath{\mathtt{IF}(#1,\ #2,\ #3)}}
 \newcommand{\sRCaa}[2]{\RC{\hphantom{[}#1\hphantom{]}}{\hphantom{[}#2\hphantom{]}}}
 \newcommand{\sRCar}[2]{\RC{\hphantom{[}#1\hphantom{]}}{[#2]}}
 \newcommand{\sRCra}[2]{\RC{[#1]}{\hphantom{[}#2\hphantom{]}}}
@@ -26,7 +26,7 @@
 
 
 %%% Concrete forms
-\newcommand{\cIF}[3]{\mathtt{IF(#1,\ #2,\ #3)}}
+\newcommand{\cIF}[3]{\ensuremath{\mathtt{IF(#1,\ #2,\ #3)}}}
 \newcommand{\cRCaa}[2]{\RCtt{#1}{#1}}
 \newcommand{\cRCar}[2]{\RCtt{#1}{[#2]}}
 \newcommand{\cRCra}[2]{\RCtt{[#1]}{#2}}
@@ -34,16 +34,16 @@
 
 
 %%% Context, reduction relation, side-conditions
-\newcommand{\ctx}{\mathcal{E}}
+\newcommand{\ctx}{\ensuremath{\mathcal{E}}}
 
-\newcommand{\sRulename}[1]{\text{\textsc{[#1]}}}
-\newcommand{\sRule}[4]{#2 #3 & \sRulename{#1}\\#4\\}
+\newcommand{\sRulename}[1]{\ensuremath{\text{\textsc{[#1]}}}}
+\newcommand{\sRule}[4]{\ensuremath{#2 #3 & \sRulename{#1}\\#4\\}}
 
-\newcommand{\sWhere}[1]{\qquad\text{\textbf{where} } #1\\}
-\newcommand{\sAnd}[1]{\qquad\hphantom{\text{\textbf{where} }} #1\\}
+\newcommand{\sWhere}[1]{\ensuremath{\qquad\text{\textbf{where} } #1\\}}
+\newcommand{\sAnd}[1]{\ensuremath{\qquad\hphantom{\text{\textbf{where} }} #1\\}}
 
 %%% Lifting
-\newcommand{\lctx}{\mathcal{L}}
-\newcommand{\lftMore}{\mathtt{more}}
-\newcommand{\lftDone}{\mathtt{done}}
+\newcommand{\lctx}{\ensuremath{\mathcal{L}}}
+\newcommand{\lftMore}{\ensuremath{\mathtt{more}}}
+\newcommand{\lftDone}{\ensuremath{\mathtt{done}}}
 \newcommand{\lftRule}[3]{\sRule{#1}{#2}{\rightsquigarrow}{#3}}
